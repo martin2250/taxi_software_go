@@ -48,8 +48,8 @@ func main() {
 		} else if seconds >= 24*3600 {
 			log.Printf("invalid second %d - retrying\n", seconds)
 		} else {
-			// log.Printf("20%02d - %d", wr.BinaryYears, wr.BinarySeconds)
-			// log.Printf("20%02d-%d %d", wr.BinaryYears, days, seconds)
+			log.Printf("20%02d - %d %d", wr.BinaryDays, wr.BinaryYears, wr.BinarySeconds)
+			log.Printf("20%02d-%d %d", wr.BinaryYears, days, seconds)
 			date := time.Date(2000+int(wr.BinaryYears), 1, 0, 0, 0, 0, 0, time.UTC)
 			date = date.Add(24 * time.Hour * time.Duration(days))
 			date = date.Add(time.Second * time.Duration(seconds))
